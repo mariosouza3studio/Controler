@@ -1,0 +1,168 @@
+/* --- Geral e Tipografia --- */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f7f9;
+}
+
+/* --- Header e Salvar --- */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#saveButton {
+    padding: 0.8rem 1rem;
+    background-color: #03cf69;
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* --- Status e Progresso --- */
+.status-area {
+    padding: 15px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#status {
+    font-weight: 500;
+    color: #333;
+}
+
+.progress-bar { 
+    height: 8px; 
+    background-color: #e9ecef; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    margin-top: 5px;
+}
+
+.progress-bar-fill { 
+    height: 100%; 
+    background-color: #28a745; /* Verde para progresso */
+    width: 0%; 
+    transition: width 0.3s;
+}
+
+/* --- Galeria (Layout Principal da Fileira) --- */
+main {
+    padding: 30px 40px;
+}
+
+.slides-gallery {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que os boxes fiquem em uma única fileira */
+    overflow-x: auto; /* Permite rolagem horizontal se houver muitos slides */
+    gap: 20px; /* Espaço entre os slides */
+    padding-bottom: 20px; /* Espaço para sombra e rolagem */
+}
+
+/* --- Slide Box (Miniatura) --- */
+.slide-box {
+    flex: 0 0 auto; /* Não cresce, não encolhe, largura automática */
+    width: 14rem; /* Largura fixa para a miniatura */
+    height: 10rem; /* Altura fixa para a miniatura */
+    position: relative;
+    border: 3px solid transparent; /* Borda para destaque */
+    border-radius: 1rem;
+    cursor: grab; /* Indica que é arrastável */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+.slide-box.dragging {
+    opacity: 0.7;
+    cursor: grabbing;
+}
+
+.slide-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem; /* Arredondamento interno */
+}
+
+/* --- Box "Adicionar Imagem" --- */
+#add-slide-box {
+    background-color: #e0e0e0;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#add-slide-box:hover {
+    background-color: #b6b6b6;
+    border-color: #a0a0a0;
+}
+
+#add-slide-box i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* --- Controles de Ação (Overlay) --- */
+.slide-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro sutil */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    opacity: 0; /* Escondido por padrão */
+    transition: opacity 0.2s;
+}
+
+.slide-box:hover .slide-controls {
+    opacity: 1; /* Exibe ao passar o mouse */
+}
+
+.control-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.control-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilo para o botão de remoção */
+.control-button.btn-remove {
+    background-color: #dc3545;
+    color: white;
+}
+.control-button.btn-remove:hover {
+    background-color: #c82333;
+}
