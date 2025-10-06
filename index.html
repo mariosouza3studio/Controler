@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Slides - Galeria Interativa</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Controle de slides</h1>
+        <div id="save-section">
+            <button id="saveButton" onclick="salvarAlteracoes()" disabled>
+                <i class="fas fa-save"></i> Salvar
+            </button>
+        </div>
+    </header>
+
+    <div id="status-area" class="status-area">
+        <div id="uploadProgressContainer" class="progress-bar" style="display: none;">
+            <div class="progress-bar-fill" id="uploadProgress">0%</div>
+        </div>
+        <div id="status">Carregando slides atuais...</div>
+    </div>
+    
+    <main>
+        <section id="slides-gallery" class="slides-gallery">
+            </section>
+    </main>
+
+    <input type="file" id="imageFiles" multiple accept="image/*" style="display: none;">
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+</body>
+</html>
